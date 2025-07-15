@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services - Mann Mitra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Mann Mitra</h1>
+    <nav class="navbar">
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('about') }}">About</a>
+      <a href="{{ url_for('services') }}">Services</a>
+      <a href="{{ url_for('contact') }}">Contact</a>
+  </nav>
+  </header>
+
+  <div class="container">
+    <section>
+      <h1 style="color: #2d2a4a ; text-align: center; font-size: 30px; padding-bottom:10px;">Services</h1>
+      <p>At Mann Mitra, we aim to provide initial mental wellness support through a compassionate AI assistant. Here’s what we offer:</p>
+
+      <ul>
+        <li><span class="emoji">🧠</span> <strong>AI Chat Support</strong><br />Engage in meaningful, human-like conversations with our AI assistant — designed to listen, respond empathetically, and help you process emotions.</li><br />
+
+        <li><span class="emoji">🎓</span> <strong>Student Support</strong><br />Academic stress, peer pressure, or exam anxiety — Mann Mitra provides a safe space for students to open up and find emotional relief.</li><br />
+
+        <li><span class="emoji">🏢</span> <strong>Workplace Wellness</strong><br />Help your employees maintain emotional balance and mental resilience. Mann Mitra can be integrated into corporate wellness programs to offer round-the-clock support.</li><br />
+
+        <li><span class="emoji">💬</span> <strong>Telehealth Companion</strong><br />Supplement existing mental health services with Mann Mitra’s accessible chatbot, especially for users needing support between therapy sessions.</li><br />
+
+        <li><span class="emoji">🔒</span> <strong>Privacy-First Platform</strong><br />All interactions are confidential and secured with end-to-end encryption. We follow privacy-by-default principles — no data is stored unless explicitly permitted.</li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

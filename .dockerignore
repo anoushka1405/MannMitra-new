@@ -1,0 +1,26 @@
+# Ignore Python cache and virtual environments
+__pycache__/
+*.py[cod]
+env/
+venv/
+
+# Ignore version control files
+.git/
+.gitignore
+
+# Ignore system/IDE files
+.DS_Store
+*.log
+
+# Ignore test files not needed in production
+test.py
+test_cases_*.json
+failed_cases.json
+test_results.txt
+
+# Optional: Skip video/large media unless needed
+*.mp4
+*.avi
+
+# Optional: skip docs
+README.md

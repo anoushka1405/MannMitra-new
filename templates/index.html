@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mann Mitra | Your Mental Health Companion</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/intro.js/minified/introjs.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='grounding.css') }}">
+  <style>
+    .chat-container, .chat-controls {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .chat-input {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .chat-input input {
+      flex: 1;
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .chat-input button {
+      padding: 0.75rem;
+      border: none;
+      border-radius: 8px;
+    }
+    .chat-input button[type="submit"] {
+      background-color: #6b4eff;
+      color: white;
+    }
+    .chat-controls label {
+      display: inline-block;
+      margin: 0.5rem 1rem 0.5rem 0;
+    }
+    .button-row {
+      margin-top: 1rem;
+      text-align: center;
+    }
+    .button-row button {
+      margin: 0.25rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: none;
+    }
+    .restart-btn {
+      background-color: #6b4eff;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><img src="{{ url_for('static', filename='logo.png') }}" alt="Mann Mitra Logo"></div>
+    <nav class="navbar" aria-label="Main Navigation">
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('about') }}">About</a>
+      <a href="{{ url_for('services') }}">Services</a>
+      <a href="{{ url_for('contact') }}">Contact</a>
+    </nav>
+    <button 
+      id="start-tutorial-btn" 
+      style="margin-left: auto;"
+      data-step="5"
+      data-intro="Click here anytime to restart the tutorial and learn how to use Mann Mitra.">
+     ❓ Show Me How
+    </button>
+  </header>
+
+  <div class="dark-mode-toggle">
+    <label for="darkModeSwitch">🌙</label>
+    <input type="checkbox" id="darkModeSwitch" />
+  </div>
+
+  <section class="hero">
+    <div class="hero-content" style="max-width: 1500px; display: flex; justify-content: space-between; gap: 3rem; flex-wrap: wrap;">
+      <div class="hero-text" style="flex: 1; min-width: 300px;">
+        <h1 style="font-size: 50px;">Welcome to Mann Mitra</h1>
+        <h2>Your Friendly Mental Health Companion</h2>
+        <p>
+          Feeling stressed, anxious, or just need someone to talk to? Aasha is your private,
+          24/7 AI-powered mental health assistant that offers comforting conversations whenever
+          you need emotional support.
+        </p>
+        <button class="cta-btn" 
+          onclick="document.getElementById('chat').scrollIntoView({ behavior: 'smooth' });"
+          data-step="1"
+          data-intro="Click here to start chatting with Aasha. She’s your 24/7 mental health buddy!">
+         Chat Now
+        </button>
+      </div>
+
+      <div class="hero-board" style="flex: 1; min-width: 300px;">
+        <h3 style="text-align:center; padding-bottom:40px; font-size:22px">How are you feeling today?</h3>
+        <div class="emotion-board">
+          <div class="emotion-swatch" style="background-color: #6baffd" data-emotion="sadness">Sadness</div>
+          <div class="emotion-swatch" style="background-color: #ffe96e" data-emotion="joy">Joy</div>
+          <div class="emotion-swatch" style="background-color: #f36565" data-emotion="anger">Anger</div>
+          <div class="emotion-swatch" style="background-color: #c36cfa" data-emotion="fear">Fear</div>
+          <div class="emotion-swatch" style="background-color: #f8c66a" data-emotion="surprise">Surprise</div>
+          <div class="emotion-swatch" style="background-color: #f64e86" data-emotion="love">Love</div>
+          <div class="emotion-swatch" style="background-color: #ffe4c4" data-emotion="neutral">Neutral</div>
+        </div>
+        <div class="emotion-info">
+          <h4 id="emotion-name"></h4>
+          <p id="emotion-response"></p>
+        </div>
+        <div class="kindness-box" style="text-align: center; margin-top:6px;">
+          <button id="kindness-btn">🌼 Need a little kindness?</button>
+          <p id="kindness-quote"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="grounding-controls" style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
+    <button id="start-grounding-btn"
+        class="ground"
+        data-step="2"
+        data-intro="Feeling overwhelmed? Start grounding mode to calm down.">
+     🧘 Start Grounding Mode
+    </button>
+    <button id="stop-grounding-btn" style="display:none;">❌ Stop Grounding</button>
+  </div>
+
+  <!-- Chat Section -->
+   <button id="restart-btn"
+        class="restart-btn"
+        onclick="restartChat()"
+        data-step="4"
+        style="margin-left:10rem;margin-bottom:0%;"
+        data-intro="Restart the conversation with Aasha.">
+      🔁 Restart
+    </button>  
+  <section id="chat" class="chat-container" style="scroll-margin-top: 80px;">
+    <div class="chat-box" id="chat-box">
+      <div class="chat-msg bot"><strong>Aasha:</strong> Hi, I’m Aasha. What’s on your mind today?</div>
+    </div>
+    <div class="typing-indicator" id="typing-indicator" style="display: none;">
+      Aasha is typing<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
+    </div>
+    <form class="chat-input" id="chat-form">
+      <input type="text" id="user-input" placeholder="Type your message..." required />
+      <button type="button" class="chat-btn mic-btn" onclick="startListening()" style="width:4.6rem">
+        <i class="fas fa-microphone"></i>
+      </button>
+      <button type="submit" id="send">Send</button>
+    </form>
+  </section>
+
+  <!-- Controls -->
+  <div class="chat-controls">
+    <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+      <label for="voiceSelect" style="white-space: nowrap;">🎤 Choose Aasha’s Voice:</label>
+      <select id="voiceSelect"
+        style="max-width: 500px; width: auto;"
+        data-step="3"
+        data-intro="Choose a voice for Aasha to speak with.">
+      </select>
+    </div>
+
+    <div style="text-align:center; margin-top:0.5rem;">
+      <label><input type="checkbox" id="rememberToggle" /> 🧠 Remember my session</label>
+      <label style="margin-left:1rem;"><input type="checkbox" id="ttsToggle" checked /> 🔊 Enable voice responses</label>
+    </div>
+
+    <div class="button-row" style="display:flex; margin-left:5rem;">
+      <button onclick="downloadChat()" id="down2">📥 Download as TXT</button>
+      <button onclick="downloadChatAsPDF()" id="down1">📄 Download as PDF</button>
+    </div>
+  </div>
+ 
+  <script src="https://unpkg.com/intro.js/minified/intro.min.js"></script>
+  <script src="{{ url_for('static', filename='grounding.js') }}"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const startBtn = document.getElementById("start-grounding-btn");
+      if (startBtn) {
+        startBtn.addEventListener("click", () => {
+          window.showGroundingUI();
+        });
+      }
+    });
+
+    const stopBtn = document.getElementById("stop-grounding-btn");
+if (stopBtn) {
+  stopBtn.addEventListener("click", () => {
+    window.hideGroundingUI();
+  });
+}
+
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (!localStorage.getItem('seenTutorial')) {
+      introJs().start();
+      localStorage.setItem('seenTutorial', 'true');
+    }
+
+    const tutorialBtn = document.getElementById('start-tutorial-btn');
+    if (tutorialBtn) {
+      tutorialBtn.addEventListener('click', () => {
+        introJs().start();
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
+

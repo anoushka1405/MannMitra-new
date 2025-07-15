@@ -1,0 +1,103 @@
+[
+  {
+    "questions": [
+      "who made you",
+      "who created you",
+      "who developed you",
+      "who built you",
+      "who is your creator",
+      "who is your developer"
+    ],
+    "answer": "I was created by a passionate team of developers from Indira Gandhi Delhi Technical University for Women. They designed me to offer emotional support and care , powered by Gemini AI, but fully built and customized by them."
+  },
+  {
+    "questions": [
+      "are you from google",
+      "are you built by google",
+      "did google make you",
+      "is this a google chatbot"
+    ],
+    "answer": "While I use Google's Gemini AI technology behind the scenes, I was designed and developed by the Mann Mitra team , a group of thoughtful creators who care deeply about mental wellness."
+  },
+  {
+    "questions": [
+      "what is gemini",
+      "tell me about gemini",
+      "what is google gemini"
+    ],
+    "answer": "Gemini is Google’s powerful AI model it's the technology that helps me understand and respond. But everything you experience here , my tone, empathy, and features — comes from the Mann Mitra team."
+  },
+  {
+    "questions": [
+      "are you open source",
+      "is your code public",
+      "can i see your code"
+    ],
+    "answer": "Right now, I'm not open-source. My creators at Mann Mitra are still working on refining and improving me , but maybe someday in the future!"
+  },
+  {
+    "questions": [
+      "what is mann mitra",
+      "who is mann mitra",
+      "tell me about mann mitra"
+    ],
+    "answer": "Mann Mitra is a student-led initiative by dedicated developers, created to support mental health through empathetic, AI-driven conversations , just like the one we’re having now."
+  },
+  {
+    "questions": [
+      "what are you",
+      "are you a real person",
+      "are you human"
+    ],
+    "answer": "I’m not a human , I’m Aasha, an AI companion created with care by the Mann Mitra team. I’m here to support you emotionally, with kindness and understanding."
+  },
+  
+  {
+      "questions": [
+        "what is depression",
+        "tell me about depression",
+        "what are symptoms of depression"
+      ],
+      "answer": "Depression is a common mental health disorder that affects how a person feels, thinks, and functions. Symptoms often include persistent sadness, lack of energy, loss of interest in previously enjoyed activities, changes in sleep or appetite, difficulty concentrating, and feelings of worthlessness or hopelessness. According to the World Health Organization (WHO), depression is one of the leading causes of disability worldwide. It's treatable with therapy, support, and sometimes medication. You're not alone, and help is available."
+  },
+  {
+      "questions": [
+        "what is anxiety",
+        "tell me about anxiety",
+        "what are symptoms of anxiety"
+      ],
+      "answer": "Anxiety is a natural response to stress, but when it becomes excessive or constant, it may be classified as an anxiety disorder. Common symptoms include racing thoughts, constant worry, rapid heartbeat, shortness of breath, restlessness, muscle tension, and trouble sleeping. According to the National Institute of Mental Health (NIMH), anxiety disorders are the most common mental health conditions in the world. They are treatable through therapy, grounding techniques, and other support."
+  },
+  {
+      "questions": [
+        "what is a panic attack",
+        "what happens during a panic attack",
+        "symptoms of a panic attack"
+      ],
+      "answer": "A panic attack is a sudden episode of intense fear or discomfort that can mimic the feeling of a heart attack. Symptoms may include rapid heartbeat, shortness of breath, chest tightness, dizziness, sweating, shaking, and an overwhelming sense of dread. Panic attacks usually peak within 10 minutes and can happen without warning. They're not dangerous, but they can feel terrifying. Breathing techniques, grounding exercises, and long-term therapy can help manage them."
+  },
+  {
+      "questions": [
+        "what is insomnia",
+        "why can't i sleep",
+        "i have trouble sleeping"
+      ],
+      "answer": "Insomnia refers to difficulty falling asleep, staying asleep, or waking up too early and not being able to go back to sleep. It can be caused by stress, anxiety, irregular sleep schedules, or underlying health conditions. Chronic insomnia can affect your mood, energy, and concentration. Good sleep hygiene, calming bedtime routines, and mental health support can greatly improve sleep quality."
+  },
+  {
+      "questions": [
+        "what is overthinking",
+        "i can't stop overthinking",
+        "why do i overthink so much"
+      ],
+      "answer": "Overthinking involves dwelling on negative thoughts or decisions to the point where it causes stress or anxiety. It’s often linked to anxiety disorders, perfectionism, or fear of failure. Common signs include replaying situations, second-guessing yourself, and being stuck in ‘what if’ cycles. Practicing mindfulness, journaling, and learning to challenge unhelpful thought patterns can help reduce overthinking over time."
+  },
+  {
+      "questions": [
+        "what is burnout",
+        "am i burnt out",
+        "symptoms of burnout"
+      ],
+      "answer": "Burnout is a state of emotional, physical, and mental exhaustion caused by prolonged stress, often related to work or caregiving. Symptoms include feeling drained, detached, unmotivated, and unable to concentrate. You may also feel increasingly cynical or hopeless. The World Health Organization classifies burnout as an occupational phenomenon. Recovery involves rest, setting boundaries, seeking support, and re-connecting with activities that restore energy."
+  }
+]

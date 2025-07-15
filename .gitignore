@@ -1,0 +1,14 @@
+# Ignore virtual environment
+env/
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore dotenv file with API keys
+.env
+
+# Ignore VS Code settings (optional)
+.vscode/.env
+.DS_Store
+Static/.DS_Store

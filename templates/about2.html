@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About - Mann Mitra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Mann Mitra</h1>
+    <nav class="navbar">
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('about') }}">About</a>
+      <a href="{{ url_for('services') }}">Services</a>
+      <a href="{{ url_for('contact') }}">Contact</a>
+  </nav>
+  </header>
+
+  <div class="container">
+    <section>
+      <h1 style="color: #2d2a4a ; text-align: center; font-size: 30px; padding-bottom:10px;">About</h1>
+      <p>Mann Mitra is a generative AI-based chatbot designed to support mental health through empathetic conversation. Built using advanced NLP technologies like OpenAI’s GPT and Hugging Face Transformers, it offers human-like interaction to those seeking relief from stress, anxiety, or emotional overwhelm.</p>
+
+      <p>While it’s not a replacement for professional therapy, Mann Mitra serves as a readily accessible emotional companion, helping users feel heard and supported — anytime, anywhere.</p>
+
+      <h3  style="color: #2d2a4a">Key Features:</h3>
+      <ul>
+        <li>Emotionally sensitive conversations</li>
+        <li>24/7 availability</li>
+        <li>Private and anonymous interaction</li>
+        <li>Simple and clean user interface</li>
+      </ul>
+
+      <h3 style="color: #2d2a4a">Our Mission:</h3>
+      <p>To make mental health support more approachable, stigma-free, and always available, using the power of ethical and responsible AI.</p>
+
+      <h3 style="color: #2d2a4a">Developed by:</h3>
+      <p>A team of passionate students from IGDTUW in collaboration with Sansoftech, as part of the Generative AI & Prompt Engineering Internship Program 2025.</p>
+    </section>
+  </div>
+</body>
+</html>

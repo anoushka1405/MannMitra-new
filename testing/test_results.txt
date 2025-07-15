@@ -1,0 +1,518 @@
+
+🧪 Running 60 test cases...
+
+🔹 Test 1: I'm feeling so sad today, everything seems hopeless
+
+[Emotion Detection] Input: I'm feeling so sad today, everything seems hopeless
+[Keyword Match] sadness: 'sad' matched
+[Keyword Match] sadness: 'hopeless' matched
+[Keyword Detection Result] Top Emotion: sadness, Score: 2
+[Keyword Override] Using keyword-based label: sadness
+✅ Passed | Detected emotion: sadness
+
+🔹 Test 2: I'm absolutely thrilled! Got the job I wanted!
+
+[Emotion Detection] Input: I'm absolutely thrilled! Got the job I wanted!
+[Keyword Match] joy: 'thrilled' matched
+[Keyword Detection Result] Top Emotion: joy, Score: 1
+[Model Fallback] No keyword match — using model.
+[Model Raw Output] [[{'label': 'excitement', 'score': 0.6576938033103943}, {'label': 'joy', 'score': 0.4316789507865906}, {'label': 'admiration', 'score': 0.029268311336636543}, {'label': 'neutral', 'score': 0.024603240191936493}, {'label': 'approval', 'score': 0.02233492024242878}]]
+[Model Mapping] Label: excitement, Core: joy, Score: 0.658
+[Model Mapping] Label: joy, Core: joy, Score: 0.432
+[Model Mapping] Label: admiration, Core: love, Score: 0.029
+[Model Mapping] Label: neutral, Core: neutral, Score: 0.025
+[Model Mapping] Label: approval, Core: neutral, Score: 0.022
+[Model Final] Top Emotion: joy, Score: 1.089
+✅ Passed | Detected emotion: joy
+
+🔹 Test 3: I'm so angry right now, this is completely frustrating
+
+[Emotion Detection] Input: I'm so angry right now, this is completely frustrating
+[Keyword Match] anger: 'angry' matched
+[Keyword Detection Result] Top Emotion: anger, Score: 1
+[Model Fallback] No keyword match — using model.
+[Model Raw Output] [[{'label': 'anger', 'score': 0.8008332848548889}, {'label': 'annoyance', 'score': 0.27483123540878296}, {'label': 'neutral', 'score': 0.03973554074764252}, {'label': 'disapproval', 'score': 0.024394754320383072}, {'label': 'disappointment', 'score': 0.01209871657192707}]]
+[Model Mapping] Label: anger, Core: anger, Score: 0.801
+[Model Mapping] Label: annoyance, Core: anger, Score: 0.275
+[Model Mapping] Label: neutral, Core: neutral, Score: 0.040
+[Model Mapping] Label: disapproval, Core: anger, Score: 0.024
+[Model Mapping] Label: disappointment, Core: anger, Score: 0.012
+[Model Final] Top Emotion: anger, Score: 1.112
+✅ Passed | Detected emotion: anger
+
+🔹 Test 4: I'm really scared about tomorrow's presentation
+
+[Emotion Detection] Input: I'm really scared about tomorrow's presentation
+[Keyword Match] fear: 'scared' matched
+[Keyword Detection Result] Top Emotion: fear, Score: 1
+[Model Fallback] No keyword match — using model.
+[Model Raw Output] [[{'label': 'fear', 'score': 0.8929983973503113}, {'label': 'nervousness', 'score': 0.07886975258588791}, {'label': 'neutral', 'score': 0.04311124235391617}, {'label': 'sadness', 'score': 0.01884286478161812}, {'label': 'approval', 'score': 0.015074901282787323}]]
+[Model Mapping] Label: fear, Core: fear, Score: 0.893
+[Model Mapping] Label: nervousness, Core: fear, Score: 0.079
+[Model Mapping] Label: neutral, Core: neutral, Score: 0.043
+[Model Mapping] Label: sadness, Core: sadness, Score: 0.019
+[Model Mapping] Label: approval, Core: neutral, Score: 0.015
+[Model Final] Top Emotion: fear, Score: 0.972
+✅ Passed | Detected emotion: fear
+
+🔹 Test 5: I love spending time with my family, they mean everything to...
+
+[Emotion Detection] Input: I love spending time with my family, they mean everything to me
+[Keyword Match] love: 'love' matched
+[Keyword Detection Result] Top Emotion: love, Score: 1
+[Model Fallback] No keyword match — using model.
+[Model Raw Output] [[{'label': 'love', 'score': 0.9601432085037231}, {'label': 'admiration', 'score': 0.033652715384960175}, {'label': 'approval', 'score': 0.017504438757896423}, {'label': 'joy', 'score': 0.015887144953012466}, {'label': 'neutral', 'score': 0.00903911329805851}]]
+[Model Mapping] Label: love, Core: love, Score: 0.960
+[Model Mapping] Label: admiration, Core: love, Score: 0.034
+[Model Mapping] Label: approval, Core: neutral, Score: 0.018
+[Model Mapping] Label: joy, Core: joy, Score: 0.016
+[Model Mapping] Label: neutral, Core: neutral, Score: 0.009
+[Model Final] Top Emotion: love, Score: 0.994
+
+✅ Passed | Detected emotion: love
+🔹 Test 6: I can't believe this happened! So unexpected!
+
+[Emotion Detection] Input: I can't believe this happened! So unexpected!
+[Keyword Match] surprise: 'unexpected' matched
+[Keyword Match] surprise: 'can't believe' matched
+[Keyword Detection Result] Top Emotion: surprise, Score: 2
+[Keyword Override] Using keyword-based label: surprise
+✅ Passed | Detected emotion: surprise
+
+🔹 Test 7: I'm okay, just another normal day
+
+[Emotion Detection] Input: I'm okay, just another normal day
+[Keyword Match] neutral: 'okay' matched
+[Keyword Match] neutral: 'normal' matched
+[Keyword Detection Result] Top Emotion: neutral, Score: 2
+[Keyword Override] Using keyword-based label: neutral
+✅ Passed | Detected emotion: neutral
+
+🔹 Test 8: I've been crying all night, feeling so alone and broken
+
+[Emotion Detection] Input: I've been crying all night, feeling so alone and broken
+[Keyword Match] sadness: 'alone' matched
+[Keyword Match] sadness: 'broken' matched
+[Keyword Detection Result] Top Emotion: sadness, Score: 2
+[Keyword Override] Using keyword-based label: sadness
+✅ Passed | Detected emotion: sadness
+
+🔹 Test 9: This is the best day ever! I'm so happy and grateful
+
+[Emotion Detection] Input: This is the best day ever! I'm so happy and grateful
+[Keyword Match] joy: 'happy' matched
+[Keyword Match] joy: 'grateful' matched
+[Keyword Detection Result] Top Emotion: joy, Score: 2
+[Keyword Override] Using keyword-based label: joy
+✅ Passed | Detected emotion: joy
+
+🔹 Test 10: I'm livid! This is absolutely disgusting behavior
+
+[Emotion Detection] Input: I'm livid! This is absolutely disgusting behavior
+[Keyword Match] anger: 'livid' matched
+[Keyword Detection Result] Top Emotion: anger, Score: 1
+[Model Fallback] No keyword match — using model.
+[Model Raw Output] [[{'label': 'disgust', 'score': 0.8442080020904541}, {'label': 'annoyance', 'score': 0.05451120436191559}, {'label': 'anger', 'score': 0.038524627685546875}, {'label': 'love', 'score': 0.035431209951639175}, {'label': 'sadness', 'score': 0.02671062760055065}]]
+[Model Mapping] Label: disgust, Core: anger, Score: 0.844
+[Model Mapping] Label: annoyance, Core: anger, Score: 0.055
+[Model Mapping] Label: anger, Core: anger, Score: 0.039
+[Model Mapping] Label: love, Core: love, Score: 0.035
+[Model Mapping] Label: sadness, Core: sadness, Score: 0.027
+[Model Final] Top Emotion: anger, Score: 0.937
+✅ Passed | Detected emotion: anger
+
+🔹 Test 11: My heart is racing, I'm so nervous and anxious
+
+[Emotion Detection] Input: My heart is racing, I'm so nervous and anxious
+[Keyword Match] fear: 'anxious' matched
+[Keyword Match] fear: 'nervous' matched
+[Keyword Detection Result] Top Emotion: fear, Score: 2
+[Keyword Override] Using keyword-based label: fear
+✅ Passed | Detected emotion: fear
+
+🔹 Test 12: I cherish our friendship, you're so caring
+
+[Emotion Detection] Input: I cherish our friendship, you're so caring
+[Keyword Match] love: 'caring' matched
+[Keyword Match] love: 'cherish' matched
+[Keyword Detection Result] Top Emotion: love, Score: 2
+[Keyword Override] Using keyword-based label: love
+✅ Passed | Detected emotion: love
+
+🔹 Test 13: Mind blown! I never saw that coming!
+
+[Emotion Detection] Input: Mind blown! I never saw that coming!
+[Keyword Match] surprise: 'mind blown' matched
+[Keyword Detection Result] Top Emotion: surprise, Score: 1
+[Model Fallback] No keyword match — using model.
+[Model Raw Output] [[{'label': 'surprise', 'score': 0.8056570291519165}, {'label': 'excitement', 'score': 0.13454224169254303}, {'label': 'neutral', 'score': 0.05091917887330055}, {'label': 'admiration', 'score': 0.04414556920528412}, {'label': 'realization', 'score': 0.022678924724459648}]]
+[Model Mapping] Label: surprise, Core: surprise, Score: 0.806
+[Model Mapping] Label: excitement, Core: joy, Score: 0.135
+[Model Mapping] Label: neutral, Core: neutral, Score: 0.051
+[Model Mapping] Label: admiration, Core: love, Score: 0.044
+[Model Mapping] Label: realization, Core: neutral, Score: 0.023
+[Model Final] Top Emotion: surprise, Score: 0.806
+✅ Passed | Detected emotion: surprise
+
+🔹 Test 14: Meh, whatever. It's fine I guess
+
+[Emotion Detection] Input: Meh, whatever. It's fine I guess
+[Keyword Match] neutral: 'fine' matched
+[Keyword Match] neutral: 'meh' matched
+[Keyword Match] neutral: 'whatever' matched
+[Keyword Detection Result] Top Emotion: neutral, Score: 3
+[Keyword Override] Using keyword-based label: neutral
+✅ Passed | Detected emotion: neutral
+
+🔹 Test 15: The grief is overwhelming, I feel so devastated
+
+[Emotion Detection] Input: The grief is overwhelming, I feel so devastated
+[Keyword Match] sadness: 'grief' matched
+[Keyword Match] sadness: 'devastated' matched
+[Keyword Detection Result] Top Emotion: sadness, Score: 2
+[Keyword Override] Using keyword-based label: sadness
+✅ Passed | Detected emotion: sadness
+
+🔹 Test 16: I'm smiling so much today, everything feels wonderful
+
+[Emotion Detection] Input: I'm smiling so much today, everything feels wonderful
+[Keyword Match] joy: 'wonderful' matched
+[Keyword Detection Result] Top Emotion: joy, Score: 1
+[Model Fallback] No keyword match — using model.
+[Model Raw Output] [[{'label': 'joy', 'score': 0.8170948624610901}, {'label': 'admiration', 'score': 0.36286818981170654}, {'label': 'love', 'score': 0.12278357148170471}, {'label': 'excitement', 'score': 0.08423575758934021}, {'label': 'gratitude', 'score': 0.038754284381866455}]]
+[Model Mapping] Label: joy, Core: joy, Score: 0.817
+[Model Mapping] Label: admiration, Core: love, Score: 0.363
+[Model Mapping] Label: love, Core: love, Score: 0.123
+[Model Mapping] Label: excitement, Core: joy, Score: 0.084
+[Model Mapping] Label: gratitude, Core: joy, Score: 0.039
+[Model Final] Top Emotion: joy, Score: 0.940
+✅ Passed | Detected emotion: joy
+
+🔹 Test 17: I hate this situation, it's making me furious
+
+[Emotion Detection] Input: I hate this situation, it's making me furious
+[Keyword Match] anger: 'furious' matched
+[Keyword Match] anger: 'hate' matched
+[Keyword Detection Result] Top Emotion: anger, Score: 2
+[Keyword Override] Using keyword-based label: anger
+✅ Passed | Detected emotion: anger
+
+🔹 Test 18: I'm terrified about the results, shaking with worry
+
+[Emotion Detection] Input: I'm terrified about the results, shaking with worry
+[Keyword Match] fear: 'terrified' matched
+[Keyword Match] fear: 'shaking' matched
+[Keyword Detection Result] Top Emotion: fear, Score: 2
+[Keyword Override] Using keyword-based label: fear
+✅ Passed | Detected emotion: fear
+
+🔹 Test 19: My partner is so sweet, I adore them completely
+
+[Emotion Detection] Input: My partner is so sweet, I adore them completely
+[Keyword Match] love: 'sweet' matched
+[Keyword Match] love: 'adore' matched
+[Keyword Detection Result] Top Emotion: love, Score: 2
+[Keyword Override] Using keyword-based label: love
+✅ Passed | Detected emotion: love
+
+🔹 Test 20: Wow, that was totally unexpected and shocking
+
+[Emotion Detection] Input: Wow, that was totally unexpected and shocking
+[Keyword Match] surprise: 'unexpected' matched
+[Keyword Match] surprise: 'wow' matched
+[Keyword Detection Result] Top Emotion: surprise, Score: 2
+[Keyword Override] Using keyword-based label: surprise
+✅ Passed | Detected emotion: surprise
+
+🔹 Test 21: Just had lunch. Nothing special happening
+
+[Emotion Detection] Input: Just had lunch. Nothing special happening
+[Keyword Match] neutral: 'nothing' matched
+[Keyword Detection Result] Top Emotion: neutral, Score: 1
+[Model Fallback] No keyword match — using model.
+[Model Raw Output] [[{'label': 'neutral', 'score': 0.7391414642333984}, {'label': 'joy', 'score': 0.0685092955827713}, {'label': 'approval', 'score': 0.032913610339164734}, {'label': 'excitement', 'score': 0.03230014815926552}, {'label': 'realization', 'score': 0.020383011549711227}]]
+[Model Mapping] Label: neutral, Core: neutral, Score: 0.739
+[Model Mapping] Label: joy, Core: joy, Score: 0.069
+[Model Mapping] Label: approval, Core: neutral, Score: 0.033
+[Model Mapping] Label: excitement, Core: joy, Score: 0.032
+[Model Mapping] Label: realization, Core: neutral, Score: 0.020
+[Model Final] Top Emotion: neutral, Score: 0.792
+✅ Passed | Detected emotion: neutral
+
+🔹 Test 22: I'm disappointed and hurt by what happened
+
+[Emotion Detection] Input: I'm disappointed and hurt by what happened
+[Keyword Match] sadness: 'hurt' matched
+[Keyword Match] sadness: 'disappointed' matched
+[Keyword Detection Result] Top Emotion: sadness, Score: 2
+[Keyword Override] Using keyword-based label: sadness
+✅ Passed | Detected emotion: sadness
+
+🔹 Test 23: Feeling peaceful and delighted with life right now
+
+[Emotion Detection] Input: Feeling peaceful and delighted with life right now
+[Keyword Match] joy: 'peaceful' matched
+[Keyword Match] joy: 'delighted' matched
+[Keyword Detection Result] Top Emotion: joy, Score: 2
+[Keyword Override] Using keyword-based label: joy
+✅ Passed | Detected emotion: joy
+
+🔹 Test 24: This is so irritating and annoying, I'm bitter
+
+[Emotion Detection] Input: This is so irritating and annoying, I'm bitter
+[Keyword Match] anger: 'bitter' matched
+[Keyword Detection Result] Top Emotion: anger, Score: 1
+[Model Fallback] No keyword match — using model.
+[Model Raw Output] [[{'label': 'annoyance', 'score': 0.7271996140480042}, {'label': 'anger', 'score': 0.187983438372612}, {'label': 'disgust', 'score': 0.056975167244672775}, {'label': 'disappointment', 'score': 0.056447602808475494}, {'label': 'disapproval', 'score': 0.029704758897423744}]]
+[Model Mapping] Label: annoyance, Core: anger, Score: 0.727
+[Model Mapping] Label: anger, Core: anger, Score: 0.188
+[Model Mapping] Label: disgust, Core: anger, Score: 0.057
+[Model Mapping] Label: disappointment, Core: anger, Score: 0.056
+[Model Mapping] Label: disapproval, Core: anger, Score: 0.030
+[Model Final] Top Emotion: anger, Score: 1.058
+✅ Passed | Detected emotion: anger
+
+🔹 Test 25: Panic is setting in, I feel unsafe and alarmed
+
+[Emotion Detection] Input: Panic is setting in, I feel unsafe and alarmed
+[Keyword Match] fear: 'panic' matched
+[Keyword Match] fear: 'unsafe' matched
+[Keyword Match] fear: 'alarmed' matched
+[Keyword Detection Result] Top Emotion: fear, Score: 3
+[Keyword Override] Using keyword-based label: fear
+✅ Passed | Detected emotion: fear
+
+🔹 Test 26: bye
+✅ Passed | Exit detected: True
+
+🔹 Test 27: goodbye aasha
+✅ Passed | Exit detected: True
+
+🔹 Test 28: see you later
+✅ Passed | Exit detected: True
+
+🔹 Test 29: talk to you later
+✅ Passed | Exit detected: True
+
+🔹 Test 30: ttyl
+✅ Passed | Exit detected: True
+
+🔹 Test 31: gotta go now
+✅ Passed | Exit detected: True
+
+🔹 Test 32: i have to go
+✅ Passed | Exit detected: True
+
+🔹 Test 33: logging off
+✅ Passed | Exit detected: True
+
+🔹 Test 34: i'm done for today
+✅ Passed | Exit detected: True
+
+🔹 Test 35: signing off
+✅ Passed | Exit detected: True
+
+🔹 Test 36: good night
+✅ Passed | Exit detected: True
+
+🔹 Test 37: ok bye
+✅ Passed | Exit detected: True
+
+🔹 Test 38: bye aasha, thanks for everything
+✅ Passed | Exit detected: True
+
+🔹 Test 39: i'm leaving now
+✅ Passed | Exit detected: True
+
+🔹 Test 40: enough for now
+✅ Passed | Exit detected: True
+
+🔹 Test 41: thanks for listening, bye
+✅ Passed | Exit detected: True
+
+🔹 Test 42: I need to go now, goodbye
+✅ Passed | Exit detected: True
+
+🔹 Test 43: see you tomorrow
+✅ Passed | Exit detected: True
+
+🔹 Test 44: until next time, bye
+✅ Passed | Exit detected: True
+
+🔹 Test 45: good night aasha
+✅ Passed | Exit detected: True
+
+🔹 Test 46: I want to talk about my day
+✅ Passed | Exit detected: False
+
+🔹 Test 47: can you help me with something
+✅ Passed | Exit detected: False
+
+🔹 Test 48: I'm feeling confused about this
+✅ Passed | Exit detected: False
+
+🔹 Test 49: what should I do about this situation
+✅ Passed | Exit detected: False
+
+🔹 Test 50: I had a good day today
+
+[Emotion Detection] Input: I had a good day today
+[Keyword Detection Result] Top Emotion: sadness, Score: 0
+[Model Fallback] No keyword match — using model.
+[Model Raw Output] [[{'label': 'joy', 'score': 0.8209599256515503}, {'label': 'admiration', 'score': 0.12610214948654175}, {'label': 'excitement', 'score': 0.061301685869693756}, {'label': 'approval', 'score': 0.05972175672650337}, {'label': 'neutral', 'score': 0.03635116666555405}]]
+[Model Mapping] Label: joy, Core: joy, Score: 0.821
+[Model Mapping] Label: admiration, Core: love, Score: 0.126
+[Model Mapping] Label: excitement, Core: joy, Score: 0.061
+[Model Mapping] Label: approval, Core: neutral, Score: 0.060
+[Model Mapping] Label: neutral, Core: neutral, Score: 0.036
+[Model Final] Top Emotion: joy, Score: 0.882
+✅ Passed | Detected emotion: joy
+
+🔹 Test 51: My parents do not love me
+
+[Emotion Detection] Input: My parents do not love me
+[Keyword Detection Result] Top Emotion: sadness, Score: 0
+[Model Fallback] No keyword match — using model.
+[Model Raw Output] [[{'label': 'sadness', 'score': 0.8862698674201965}, {'label': 'disappointment', 'score': 0.14883214235305786}, {'label': 'neutral', 'score': 0.0442928746342659}, {'label': 'love', 'score': 0.023194169625639915}, {'label': 'grief', 'score': 0.023107226938009262}]]
+[Model Mapping] Label: sadness, Core: sadness, Score: 0.886
+[Model Mapping] Label: disappointment, Core: anger, Score: 0.149
+[Model Mapping] Label: neutral, Core: neutral, Score: 0.044
+[Model Mapping] Label: love, Core: love, Score: 0.023
+[Model Mapping] Label: grief, Core: sadness, Score: 0.023
+[Model Final] Top Emotion: sadness, Score: 0.909
+✅ Passed | Detected emotion: sadness
+
+🔹 Test 52: I am not feeling anything today
+
+[Emotion Detection] Input: I am not feeling anything today
+[Keyword Detection Result] Top Emotion: sadness, Score: 0
+[Model Fallback] No keyword match — using model.
+[Model Raw Output] [[{'label': 'neutral', 'score': 0.8420799970626831}, {'label': 'disappointment', 'score': 0.05272183194756508}, {'label': 'sadness', 'score': 0.05250191316008568}, {'label': 'disapproval', 'score': 0.04775461181998253}, {'label': 'realization', 'score': 0.028389396145939827}]]
+[Model Mapping] Label: neutral, Core: neutral, Score: 0.842
+[Model Mapping] Label: disappointment, Core: anger, Score: 0.053
+[Model Mapping] Label: sadness, Core: sadness, Score: 0.053
+[Model Mapping] Label: disapproval, Core: anger, Score: 0.048
+[Model Mapping] Label: realization, Core: neutral, Score: 0.028
+[Model Final] Top Emotion: neutral, Score: 0.870
+✅ Passed | Detected emotion: neutral
+
+🔹 Test 53: I’m not happy, just pretending.
+
+[Emotion Detection] Input: I’m not happy, just pretending.
+[Keyword Detection Result] Top Emotion: sadness, Score: 0
+[Model Fallback] No keyword match — using model.
+[Model Raw Output] [[{'label': 'sadness', 'score': 0.2885068655014038}, {'label': 'joy', 'score': 0.14494745433330536}, {'label': 'neutral', 'score': 0.07769431173801422}, {'label': 'disappointment', 'score': 0.07719152420759201}, {'label': 'amusement', 'score': 0.07595916092395782}]]
+[Model Mapping] Label: sadness, Core: sadness, Score: 0.289
+[Model Mapping] Label: joy, Core: joy, Score: 0.145
+[Model Mapping] Label: neutral, Core: neutral, Score: 0.078
+[Model Mapping] Label: disappointment, Core: anger, Score: 0.077
+[Model Mapping] Label: amusement, Core: joy, Score: 0.076
+[Model Final] Top Emotion: sadness, Score: 0.289
+❌ Failed | Expected: sadness, Got: neutral
+
+🔹 Test 54: Just angry and exhausted.
+
+[Emotion Detection] Input: Just angry and exhausted.
+[Keyword Match] anger: 'angry' matched
+[Keyword Detection Result] Top Emotion: anger, Score: 1
+[Model Fallback] No keyword match — using model.
+[Model Raw Output] [[{'label': 'anger', 'score': 0.7783406376838684}, {'label': 'annoyance', 'score': 0.17234940826892853}, {'label': 'neutral', 'score': 0.08081867545843124}, {'label': 'sadness', 'score': 0.04193206876516342}, {'label': 'disappointment', 'score': 0.019264118745923042}]]
+[Model Mapping] Label: anger, Core: anger, Score: 0.778
+[Model Mapping] Label: annoyance, Core: anger, Score: 0.172
+[Model Mapping] Label: neutral, Core: neutral, Score: 0.081
+[Model Mapping] Label: sadness, Core: sadness, Score: 0.042
+[Model Mapping] Label: disappointment, Core: anger, Score: 0.019
+[Model Final] Top Emotion: anger, Score: 0.970
+✅ Passed | Detected emotion: anger
+
+🔹 Test 55: I don’t hate them — I just don’t care anymore.
+
+[Emotion Detection] Input: I don’t hate them — I just don’t care anymore.
+[Keyword Detection Result] Top Emotion: sadness, Score: 0
+[Model Fallback] No keyword match — using model.
+[Model Raw Output] [[{'label': 'anger', 'score': 0.4135962128639221}, {'label': 'annoyance', 'score': 0.39780670404434204}, {'label': 'disapproval', 'score': 0.20597335696220398}, {'label': 'approval', 'score': 0.14113706350326538}, {'label': 'neutral', 'score': 0.06863053143024445}]]
+[Model Mapping] Label: anger, Core: anger, Score: 0.414
+[Model Mapping] Label: annoyance, Core: anger, Score: 0.398
+[Model Mapping] Label: disapproval, Core: anger, Score: 0.206
+[Model Mapping] Label: approval, Core: neutral, Score: 0.141
+[Model Mapping] Label: neutral, Core: neutral, Score: 0.069
+[Model Final] Top Emotion: anger, Score: 1.017
+❌ Failed | Expected: neutral, Got: anger
+
+🔹 Test 56: I’m not scared. Just prepared for the worst.
+
+[Emotion Detection] Input: I’m not scared. Just prepared for the worst.
+[Keyword Detection Result] Top Emotion: sadness, Score: 0
+[Model Fallback] No keyword match — using model.
+[Model Raw Output] [[{'label': 'fear', 'score': 0.62904953956604}, {'label': 'approval', 'score': 0.14366470277309418}, {'label': 'neutral', 'score': 0.07419495284557343}, {'label': 'caring', 'score': 0.0475325770676136}, {'label': 'nervousness', 'score': 0.04059719666838646}]]
+[Model Mapping] Label: fear, Core: fear, Score: 0.629
+[Model Mapping] Label: approval, Core: neutral, Score: 0.144
+[Model Mapping] Label: neutral, Core: neutral, Score: 0.074
+[Model Mapping] Label: caring, Core: love, Score: 0.048
+[Model Mapping] Label: nervousness, Core: fear, Score: 0.041
+[Model Final] Top Emotion: fear, Score: 0.670
+✅ Passed | Detected emotion: fear
+
+🔹 Test 57: It’s not that I’m alone, I just like it better this way.
+
+[Emotion Detection] Input: It’s not that I’m alone, I just like it better this way.
+[Keyword Match] sadness: 'alone' matched
+[Keyword Detection Result] Top Emotion: sadness, Score: 1
+[Model Fallback] No keyword match — using model.
+[Model Raw Output] [[{'label': 'love', 'score': 0.5936598777770996}, {'label': 'approval', 'score': 0.42266854643821716}, {'label': 'neutral', 'score': 0.08047270774841309}, {'label': 'admiration', 'score': 0.06824207305908203}, {'label': 'disapproval', 'score': 0.035830046981573105}]]
+[Model Mapping] Label: love, Core: love, Score: 0.594
+[Model Mapping] Label: approval, Core: neutral, Score: 0.423
+[Model Mapping] Label: neutral, Core: neutral, Score: 0.080
+[Model Mapping] Label: admiration, Core: love, Score: 0.068
+[Model Mapping] Label: disapproval, Core: anger, Score: 0.036
+[Model Final] Top Emotion: love, Score: 0.662
+❌ Failed | Expected: neutral, Got: love
+
+🔹 Test 58: Not surprised. That’s exactly what I expected.
+
+[Emotion Detection] Input: Not surprised. That’s exactly what I expected.
+[Keyword Detection Result] Top Emotion: sadness, Score: 0
+[Model Fallback] No keyword match — using model.
+[Model Raw Output] [[{'label': 'approval', 'score': 0.6840875148773193}, {'label': 'neutral', 'score': 0.1452324539422989}, {'label': 'realization', 'score': 0.08016091585159302}, {'label': 'surprise', 'score': 0.028227224946022034}, {'label': 'optimism', 'score': 0.027106039226055145}]]
+[Model Mapping] Label: approval, Core: neutral, Score: 0.684
+[Model Mapping] Label: neutral, Core: neutral, Score: 0.145
+[Model Mapping] Label: realization, Core: neutral, Score: 0.080
+[Model Mapping] Label: surprise, Core: surprise, Score: 0.028
+[Model Mapping] Label: optimism, Core: joy, Score: 0.027
+[Model Final] Top Emotion: neutral, Score: 0.909
+✅ Passed | Detected emotion: neutral
+
+🔹 Test 59: I’m not mad, just disappointed.
+
+[Emotion Detection] Input: I’m not mad, just disappointed.
+[Keyword Match] sadness: 'disappointed' matched
+[Keyword Detection Result] Top Emotion: sadness, Score: 1
+[Model Fallback] No keyword match — using model.
+[Model Raw Output] [[{'label': 'disappointment', 'score': 0.743663489818573}, {'label': 'neutral', 'score': 0.13078553974628448}, {'label': 'disapproval', 'score': 0.1217738687992096}, {'label': 'annoyance', 'score': 0.10441659390926361}, {'label': 'sadness', 'score': 0.047640360891819}]]
+[Model Mapping] Label: disappointment, Core: anger, Score: 0.744
+[Model Mapping] Label: neutral, Core: neutral, Score: 0.131
+[Model Mapping] Label: disapproval, Core: anger, Score: 0.122
+[Model Mapping] Label: annoyance, Core: anger, Score: 0.104
+[Model Mapping] Label: sadness, Core: sadness, Score: 0.048
+[Model Final] Top Emotion: anger, Score: 0.970
+✅ Passed | Detected emotion: anger
+
+🔹 Test 60: It’s not a big deal. I'm fine.
+
+[Emotion Detection] Input: It’s not a big deal. I'm fine.
+[Keyword Match] neutral: 'fine' matched
+[Keyword Detection Result] Top Emotion: neutral, Score: 1
+[Model Fallback] No keyword match — using model.
+[Model Raw Output] [[{'label': 'approval', 'score': 0.7132843732833862}, {'label': 'neutral', 'score': 0.13501393795013428}, {'label': 'caring', 'score': 0.03641996532678604}, {'label': 'joy', 'score': 0.0346548967063427}, {'label': 'relief', 'score': 0.031714390963315964}]]
+[Model Mapping] Label: approval, Core: neutral, Score: 0.713
+[Model Mapping] Label: neutral, Core: neutral, Score: 0.135
+[Model Mapping] Label: caring, Core: love, Score: 0.036
+[Model Mapping] Label: joy, Core: joy, Score: 0.035
+[Model Mapping] Label: relief, Core: joy, Score: 0.032
+[Model Final] Top Emotion: neutral, Score: 0.848
+✅ Passed | Detected emotion: neutral
+
+📊 Summary
+✅ Passed: 57
+❌ Failed: 3
+📈 Accuracy: 95.0%

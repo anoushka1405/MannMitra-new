@@ -1,0 +1,8 @@
+flask
+transformers==4.48.1
+google-generativeai==0.8.5
+python-dotenv
+huggingface-hub==0.27.1
+tqdm==4.67.1
+gunicorn
+torch==2.2.2

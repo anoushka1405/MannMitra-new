@@ -1,0 +1,363 @@
+[
+  {
+    "id": 1,
+    "input": "I'm feeling so sad today, everything seems hopeless",
+    "type": "emotion",
+    "expected_emotion": "sadness"
+  },
+  {
+    "id": 2,
+    "input": "I'm absolutely thrilled! Got the job I wanted!",
+    "type": "emotion",
+    "expected_emotion": "joy"
+  },
+  {
+    "id": 3,
+    "input": "I'm so angry right now, this is completely frustrating",
+    "type": "emotion",
+    "expected_emotion": "anger"
+  },
+  {
+    "id": 4,
+    "input": "I'm really scared about tomorrow's presentation",
+    "type": "emotion",
+    "expected_emotion": "fear"
+  },
+  {
+    "id": 5,
+    "input": "I love spending time with my family, they mean everything to me",
+    "type": "emotion",
+    "expected_emotion": "love"
+  },
+  {
+    "id": 6,
+    "input": "I can't believe this happened! So unexpected!",
+    "type": "emotion",
+    "expected_emotion": "surprise"
+  },
+  {
+    "id": 7,
+    "input": "I'm okay, just another normal day",
+    "type": "emotion",
+    "expected_emotion": "neutral"
+  },
+  {
+    "id": 8,
+    "input": "I've been crying all night, feeling so alone and broken",
+    "type": "emotion",
+    "expected_emotion": "sadness"
+  },
+  {
+    "id": 9,
+    "input": "This is the best day ever! I'm so happy and grateful",
+    "type": "emotion",
+    "expected_emotion": "joy"
+  },
+  {
+    "id": 10,
+    "input": "I'm livid! This is absolutely disgusting behavior",
+    "type": "emotion",
+    "expected_emotion": "anger"
+  },
+  {
+    "id": 11,
+    "input": "My heart is racing, I'm so nervous and anxious",
+    "type": "emotion",
+    "expected_emotion": "fear"
+  },
+  {
+    "id": 12,
+    "input": "I cherish our friendship, you're so caring",
+    "type": "emotion",
+    "expected_emotion": "love"
+  },
+  {
+    "id": 13,
+    "input": "Mind blown! I never saw that coming!",
+    "type": "emotion",
+    "expected_emotion": "surprise"
+  },
+  {
+    "id": 14,
+    "input": "Meh, whatever. It's fine I guess",
+    "type": "emotion",
+    "expected_emotion": "neutral"
+  },
+  {
+    "id": 15,
+    "input": "The grief is overwhelming, I feel so devastated",
+    "type": "emotion",
+    "expected_emotion": "sadness"
+  },
+  {
+    "id": 16,
+    "input": "I'm smiling so much today, everything feels wonderful",
+    "type": "emotion",
+    "expected_emotion": "joy"
+  },
+  {
+    "id": 17,
+    "input": "I hate this situation, it's making me furious",
+    "type": "emotion",
+    "expected_emotion": "anger"
+  },
+  {
+    "id": 18,
+    "input": "I'm terrified about the results, shaking with worry",
+    "type": "emotion",
+    "expected_emotion": "fear"
+  },
+  {
+    "id": 19,
+    "input": "My partner is so sweet, I adore them completely",
+    "type": "emotion",
+    "expected_emotion": "love"
+  },
+  {
+    "id": 20,
+    "input": "Wow, that was totally unexpected and shocking",
+    "type": "emotion",
+    "expected_emotion": "surprise"
+  },
+  {
+    "id": 21,
+    "input": "Just had lunch. Nothing special happening",
+    "type": "emotion",
+    "expected_emotion": "neutral"
+  },
+  {
+    "id": 22,
+    "input": "I'm disappointed and hurt by what happened",
+    "type": "emotion",
+    "expected_emotion": "sadness"
+  },
+  {
+    "id": 23,
+    "input": "Feeling peaceful and delighted with life right now",
+    "type": "emotion",
+    "expected_emotion": "joy"
+  },
+  {
+    "id": 24,
+    "input": "This is so irritating and annoying, I'm bitter",
+    "type": "emotion",
+    "expected_emotion": "anger"
+  },
+  {
+    "id": 25,
+    "input": "Panic is setting in, I feel unsafe and alarmed",
+    "type": "emotion",
+    "expected_emotion": "fear"
+  },
+  {
+    "id": 26,
+    "input": "bye",
+    "type": "exit",
+    "expected_exit": true
+  },
+  {
+    "id": 27,
+    "input": "goodbye aasha",
+    "type": "exit",
+    "expected_exit": true
+  },
+  {
+    "id": 28,
+    "input": "see you later",
+    "type": "exit",
+    "expected_exit": true
+  },
+  {
+    "id": 29,
+    "input": "talk to you later",
+    "type": "exit",
+    "expected_exit": true
+  },
+  {
+    "id": 30,
+    "input": "ttyl",
+    "type": "exit",
+    "expected_exit": true
+  },
+  {
+    "id": 31,
+    "input": "gotta go now",
+    "type": "exit",
+    "expected_exit": true
+  },
+  {
+    "id": 32,
+    "input": "i have to go",
+    "type": "exit",
+    "expected_exit": true
+  },
+  {
+    "id": 33,
+    "input": "logging off",
+    "type": "exit",
+    "expected_exit": true
+  },
+  {
+    "id": 34,
+    "input": "i'm done for today",
+    "type": "exit",
+    "expected_exit": true
+  },
+  {
+    "id": 35,
+    "input": "signing off",
+    "type": "exit",
+    "expected_exit": true
+  },
+  {
+    "id": 36,
+    "input": "good night",
+    "type": "exit",
+    "expected_exit": true
+  },
+  {
+    "id": 37,
+    "input": "ok bye",
+    "type": "exit",
+    "expected_exit": true
+  },
+  {
+    "id": 38,
+    "input": "bye aasha, thanks for everything",
+    "type": "exit",
+    "expected_exit": true
+  },
+  {
+    "id": 39,
+    "input": "i'm leaving now",
+    "type": "exit",
+    "expected_exit": true
+  },
+  {
+    "id": 40,
+    "input": "enough for now",
+    "type": "exit",
+    "expected_exit": true
+  },
+  {
+    "id": 41,
+    "input": "thanks for listening, bye",
+    "type": "exit",
+    "expected_exit": true
+  },
+  {
+    "id": 42,
+    "input": "I need to go now, goodbye",
+    "type": "exit",
+    "expected_exit": true
+  },
+  {
+    "id": 43,
+    "input": "see you tomorrow",
+    "type": "exit",
+    "expected_exit": true
+  },
+  {
+    "id": 44,
+    "input": "until next time, bye",
+    "type": "exit",
+    "expected_exit": true
+  },
+  {
+    "id": 45,
+    "input": "good night aasha",
+    "type": "exit",
+    "expected_exit": true
+  },
+  {
+    "id": 46,
+    "input": "I want to talk about my day",
+    "type": "exit",
+    "expected_exit": false
+  },
+  {
+    "id": 47,
+    "input": "can you help me with something",
+    "type": "exit",
+    "expected_exit": false
+  },
+  {
+    "id": 48,
+    "input": "I'm feeling confused about this",
+    "type": "exit",
+    "expected_exit": false
+  },
+  {
+    "id": 49,
+    "input": "what should I do about this situation",
+    "type": "exit",
+    "expected_exit": false
+  },
+  {
+    "id": 50,
+    "input": "I had a good day today",
+    "type": "emotion",
+    "expected_emotion": "joy"
+  },
+  {
+    "id": 51,
+    "input": "My parents do not love me",
+    "type": "emotion",
+    "expected_emotion": "sadness"
+  },
+  {
+    "id": 52,
+    "input": "I am not feeling anything today",
+    "type": "emotion",
+    "expected_emotion": "neutral"
+  },
+  {
+    "id": 53,
+    "input": "I’m not happy, just pretending.",
+    "type": "emotion",
+    "expected_emotion": "sadness"
+  },
+  {
+    "id": 54,
+    "input": "Just angry and exhausted.",
+    "type": "emotion",
+    "expected_emotion": "anger"
+  },
+  {
+    "id": 55,
+    "input": "I don’t hate them — I just don’t care anymore.",
+    "type": "emotion",
+    "expected_emotion": "neutral"
+  },
+  {
+    "id": 56,
+    "input": "I’m not scared. Just prepared for the worst.",
+    "type": "emotion",
+    "expected_emotion": "fear"
+  },
+  {
+    "id": 57,
+    "input": "It’s not that I’m alone, I just like it better this way.",
+    "type": "emotion",
+    "expected_emotion": "neutral"
+  },
+  {
+    "id": 58,
+    "input": "Not surprised. That’s exactly what I expected.",
+    "type": "emotion",
+    "expected_emotion": "neutral"
+  },
+  {
+    "id": 59,
+    "input": "I’m not mad, just disappointed.",
+    "type": "emotion",
+    "expected_emotion": "anger"
+  },
+  {
+    "id": 60,
+    "input": "It’s not a big deal. I'm fine.",
+    "type": "emotion",
+    "expected_emotion": "neutral"
+  }
+
+]
