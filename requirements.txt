@@ -6,4 +6,5 @@ huggingface-hub==0.27.1
 tqdm==4.67.1
 gunicorn
 torch==2.2.2
-numpy
+numpy==1.26.4
+
