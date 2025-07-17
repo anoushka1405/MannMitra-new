@@ -10,6 +10,9 @@ from transformers import pipeline
 load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
+USE_MODEL = os.getenv("USE_MODEL", "false").lower() == "true"
+print(f"[Startup] USE_MODEL set to {USE_MODEL}")
+
 # Initialize Gemini model with memory
 aasha_session = genai.GenerativeModel("models/gemini-2.5-flash").start_chat(history=[])
 
@@ -85,16 +88,13 @@ def detect_celebration_type(message):
             "proposal", "engagement", "married", "got married", "we tied the knot", "my partner", "soulmate",
             "love of my life", "our journey", "special someone", "my person", "celebrating love"
         ],
-        "balloons": [
-            "birthday", "bday", "birth anniversary", "turned", "i turned", "it's my birthday", "my cake day",
-            "celebrating my birthday", "birthday girl", "birthday boy", "cutting cake", "party hat", "balloons",
-            "another trip around the sun", "growing older", "level up", "🎂", "🎈", "🎉"
-        ],
         "confetti": [
             "got a job", "got hired", "new job", "job offer", "promotion", "landed a job", "work anniversary",
             "career milestone", "accepted offer", "selected for", "internship offer", "placement", "campus placed",
             "new opportunity", "we're celebrating", "we celebrated", "success party", "housewarming", "party",
-            "throwing a party", "🎊", "🥳", "🎉", "cheers to", "big news", "exciting news"
+            "throwing a party", "🎊", "🥳", "🎉", "cheers to", "big news", "exciting news","birthday", "bday", "birth anniversary", "turned", "i turned", "it's my birthday", "my cake day",
+            "celebrating my birthday", "birthday girl", "birthday boy", "cutting cake", "party hat", "balloons",
+            "another trip around the sun", "growing older", "level up", "🎂", "🎈", "🎉"
         ]
     }
 
@@ -105,131 +105,6 @@ def detect_celebration_type(message):
 
     return None
 
-def detect_emotion_keywords(text):
-    text_lower = text.lower()
-    keywords = {
-        "sadness": ["sad", "grief", "loss", "hopeless", "down", "depressed", "cry", "alone", "tired", "numb", "hurt", "lonely", "broken", "regret", "disappointed", "devastated","pretending", "exhausted", "don't care", "over it", "numb"],
-        "joy": ["happy", "excited", "yay", "glad", "smile", "fun", "cheerful", "bright", "laugh", "peaceful", "grateful", "thrilled", "delighted", "wonderful"],
-        "anger": ["angry", "mad", "furious", "rage", "irritated", "annoyed", "hate", "frustrated", "pissed", "bitter", "livid", "outraged", "disgusted"],
-        "fear": ["anxious", "worried", "scared", "afraid", "panic", "nervous", "terrified", "unsafe", "shaking", "tension", "frightened", "alarmed"],
-        "love": ["love", "loved", "cared", "affection", "heartfelt", "close to me", "bond", "sweet", "caring", "adore", "cherish"],
-        "surprise": ["shocked", "surprised", "unexpected", "can't believe", "wow", "unbelievable", "sudden", "mind blown", "astonished", "amazed"],
-        "neutral": ["okay", "fine", "meh", "nothing", "normal", "usual", "bored", "whatever", "idk", "alright"]
-    }
-    emotion_scores = {}
-    for emotion, emotion_keywords in keywords.items():
-        score = sum(1 for keyword in emotion_keywords if re.search(rf"\b{re.escape(keyword)}\b", text_lower) or keyword in text_lower)
-        emotion_scores[emotion] = score
-    if any(score > 0 for score in emotion_scores.values()):
-        return max(emotion_scores.items(), key=lambda x: x[1])[0]
-    return None
-
-def detect_emotion_keywords_improved(text):
-    """
-    Improved emotion detection that handles negation and context
-    """
-    text_lower = text.lower()
-    
-    # Negation patterns - words that flip meaning
-    negation_patterns = [
-        r'\b(not|no|never|dont|don\'t|doesnt|doesn\'t|didnt|didn\'t|wont|won\'t|cant|can\'t|isnt|isn\'t|arent|aren\'t|wasnt|wasn\'t|werent|weren\'t)\b',
-        r'\b(without|lack|absence|missing|lose|lost|failed|fail)\b'
-    ]
-    
-    # Enhanced keywords with context awareness
-    keywords = {
-        "sadness": {
-            "direct": ["sad", "grief", "loss", "hopeless", "down", "depressed", "cry", "alone", "tired", "numb", "hurt", "lonely", "broken", "regret", "disappointed", "devastated", "miserable", "empty", "worthless"],
-            "contextual": ["love", "care", "support", "help", "friend", "family"]  # These become sad when negated
-        },
-        "joy": {
-            "direct": ["happy", "excited", "yay", "glad", "smile", "fun", "cheerful", "bright", "laugh", "peaceful", "grateful", "thrilled", "delighted", "wonderful", "amazing", "fantastic", "great", "awesome"],
-            "contextual": []
-        },
-        "anger": {
-            "direct": ["angry", "mad", "furious", "rage", "irritated", "annoyed", "hate", "frustrated", "pissed", "bitter", "livid", "outraged", "disgusted", "awful", "terrible"],
-            "contextual": []
-        },
-        "fear": {
-            "direct": ["anxious", "worried", "scared", "afraid", "panic", "nervous", "terrified", "unsafe", "shaking", "tension", "frightened", "alarmed", "stress", "overwhelmed"],
-            "contextual": []
-        },
-        "love": {
-            "direct": ["adore", "cherish", "treasure", "devoted", "affection", "heartfelt", "sweet", "caring", "warm", "tender"],
-            "contextual": ["love", "loved", "cared", "close to me", "bond", "support", "help", "friend", "family"]  # Only count if NOT negated
-        },
-        "surprise": {
-            "direct": ["shocked", "surprised", "unexpected", "can't believe", "wow", "unbelievable", "sudden", "mind blown", "astonished", "amazed", "wtf", "omg"],
-            "contextual": []
-        },
-        "neutral": {
-            "direct": ["okay", "fine", "meh", "nothing", "normal", "usual", "bored", "whatever", "idk", "alright", "regular"],
-            "contextual": []
-        }
-    }
-    
-    def has_negation_before(text, keyword_pos):
-        """Check if there's negation within 5 words before the keyword"""
-        # Look for negation in 5 words before the keyword
-        start_pos = max(0, keyword_pos - 50)  # Approximate 5 words
-        text_before = text[start_pos:keyword_pos]
-        
-        for pattern in negation_patterns:
-            if re.search(pattern, text_before):
-                return True
-        return False
-    
-    emotion_scores = {}
-    
-    for emotion, emotion_keywords in keywords.items():
-        direct_score = 0
-        contextual_score = 0
-        
-        # Count direct keywords (always count these)
-        for keyword in emotion_keywords["direct"]:
-            matches = list(re.finditer(rf"\b{re.escape(keyword)}\b", text_lower))
-            direct_score += len(matches)
-        
-        # Handle contextual keywords (flip meaning if negated)
-        for keyword in emotion_keywords["contextual"]:
-            matches = list(re.finditer(rf"\b{re.escape(keyword)}\b", text_lower))
-            
-            for match in matches:
-                keyword_pos = match.start()
-                is_negated = has_negation_before(text_lower, keyword_pos)
-                
-                if emotion == "love" and not is_negated:
-                    # Love keywords only count for love if NOT negated
-                    contextual_score += 1
-                elif emotion == "sadness" and is_negated:
-                    # Love/care keywords count for sadness if negated
-                    contextual_score += 2  # Weight negated positive words heavily for sadness
-        
-        emotion_scores[emotion] = direct_score + contextual_score
-    
-    # Special handling for common negated phrases
-    negated_phrases = {
-        "sadness": [
-            "don't love me", "doesn't love me", "no one loves me", "nobody loves me",
-            "don't care", "doesn't care", "no one cares", "nobody cares",
-            "not happy", "not good", "not okay", "not fine", "not well",
-            "can't be happy", "won't be happy", "not feeling good"
-        ]
-    }
-    
-    for emotion, phrases in negated_phrases.items():
-        for phrase in phrases:
-            if phrase in text_lower:
-                emotion_scores[emotion] += 3  # High weight for explicit negated phrases
-    
-    # Find the emotion with highest score
-    if any(score > 0 for score in emotion_scores.values()):
-        top_emotion = max(emotion_scores.items(), key=lambda x: x[1])[0]
-        return top_emotion
-    
-    return None
-
-import re
 
 def is_negated(keyword, text):
     """
@@ -237,16 +112,6 @@ def is_negated(keyword, text):
     """
     pattern = rf"(not|no|never|isn['’]t|wasn['’]t|don['’]t|doesn['’]t|didn['’]t)\s+(\w+\s+)?{re.escape(keyword)}"
     return re.search(pattern, text.lower()) is not None
-
-import re
-
-# Helper: Check if a keyword is negated
-def is_negated(keyword, text):
-    pattern = rf"(not|no|never|isn['’]t|wasn['’]t|don['’]t|doesn['’]t|didn['’]t)\s+(\w+\s+)?{re.escape(keyword)}"
-    return re.search(pattern, text.lower()) is not None
-
-# GOEMOTION_TO_CORE should be defined in your code earlier
-# emotion_classifier should also be available
 
 def get_emotion_label(text, threshold=2):
 
@@ -259,12 +124,13 @@ def get_emotion_label(text, threshold=2):
     emotion_classifier = get_emotion_label.model
 
     try:
+        threshold=1
         print(f"\n[Emotion Detection] Input: {text}")
         text_lower = text.lower()
 
         # Step 1: Keyword-based detection with negation handling
         keywords = {
-            "sadness": ["sad", "grief", "loss", "hopeless", "down", "depressed", "cry", "alone", "tired", "numb", "hurt", "lonely", "broken", "regret", "disappointed", "devastated"],
+            "sadness": ["sad", "grief", "loss", "hopeless", "down", "depressed", "cry", "alone", "tired", "numb", "hurt", "lonely", "broken", "regret", "disappointed", "devastated","off", "don’t know why"],
             "joy": ["happy", "excited", "yay", "glad", "smile", "fun", "cheerful", "bright", "laugh", "peaceful", "grateful", "thrilled", "delighted", "wonderful"],
             "anger": ["angry", "mad", "furious", "rage", "irritated", "annoyed", "hate", "frustrated", "pissed", "bitter", "livid", "outraged", "disgusted"],
             "fear": ["anxious", "worried", "scared", "afraid", "panic", "nervous", "terrified", "unsafe", "shaking", "tension", "frightened", "alarmed"],
@@ -290,10 +156,15 @@ def get_emotion_label(text, threshold=2):
             print(f"[Keyword Override] Using keyword-based label: {top_emotion}")
             return top_emotion
 
-        # Step 2: Model fallback
+       # Step 2: Model fallback
+        if not USE_MODEL:
+            print("[Model Fallback Skipped] USE_MODEL is False — defaulting to neutral.")
+            return "neutral"
+
         print("[Model Fallback] No keyword match — using model.")
         results = emotion_classifier(text)
         print(f"[Model Raw Output] {results}")
+
 
         if isinstance(results, list) and len(results) > 0:
             results = results[0] if isinstance(results[0], list) else results
