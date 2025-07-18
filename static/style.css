@@ -74,7 +74,7 @@ nav a:hover {
   justify-content: center;
   padding: 2rem 4rem;
   min-height: 80vh;
-  padding-top: 165px;
+  padding-top: 185px;
 }
 
 .hero-content {
@@ -968,4 +968,137 @@ body.dark-mode .chat-box::-webkit-scrollbar-thumb {
 body.dark-mode .introjs-tooltip {
   background-color: #f9f9f9 !important;
   color: black !important;
+}
+
+/* 📱 Additional Responsive Styles for Phones & Tablets */
+@media screen and (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-text,
+  .hero-board {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .hero-image img {
+    max-width: 70%;
+  }
+
+  .container,
+  .contact-container,
+  pre {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+
+  .chat-container {
+    margin-top: 6rem;
+    margin-bottom: 1rem;
+    width: 95% !important;
+  }
+
+  .chat-box {
+    padding: 1rem;
+    padding-bottom: 14rem;
+  }
+
+  .chat-input {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .chat-input input {
+    width: 100%;
+    padding: 0.8rem;
+  }
+
+  .chat-input button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .voice-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .emotion-board {
+    gap: 0.8rem;
+  }
+
+  .emotion-swatch {
+    width: 80px;
+    height: 80px;
+    font-size: 0.9rem;
+  }
+
+  .dark-mode-toggle {
+    right: 15px;
+    bottom: 20px;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  nav a {
+    margin: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .cta-btn,
+  .chat-input button {
+    font-size: 0.95rem;
+  }
+
+  .balloon,
+  .heart {
+    width: 30px;
+    height: 40px;
+  }
+
+  .chat-msg {
+    max-width: 100%;
+    padding: 0.8rem 1rem;
+  }
+
+  .dark-mode-toggle input[type="checkbox"] {
+    width: 36px;
+    height: 18px;
+  }
+
+  .dark-mode-toggle input[type="checkbox"]::before {
+    width: 16px;
+    height: 16px;
+  }
 }
