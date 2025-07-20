@@ -23,14 +23,14 @@ MannMitra is an AI-powered chatbot designed to offer empathetic, supportive conv
 
 - 🧠 Emotion classification using pre-trained models
 
-- 🌐 Language detection & Hindi-to-English translation
-
 - 🌿 "Grounding Mode" for panic & overwhelm (with sounds, affirmations)
 
 - 🔒 No data storage — user privacy is respected by design
 
-- 🎤 Voice input and output controls for hands-free chatting  
-- 🧠 Session memory to remember past conversations  
+- 🎤 Voice input and output controls for hands-free chattin
+    
+- 🧠 Session memory to remember past conversations
+
 - ⬇ Option to download chat transcripts
 
 
