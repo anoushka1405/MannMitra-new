@@ -2,6 +2,7 @@
 *A Conversational Mental Health Assistant*
 
 MannMitra is an AI-powered chatbot designed to offer empathetic, supportive conversations to individuals experiencing stress, anxiety, or emotional overwhelm. Developed as part of the IGDTUW–Sansoftech Generative AI Internship Capstone, the goal is to make emotional support more accessible, private, and always available.
+https://mannmitra-421674818991.asia-south1.run.app/
 
 ## 🌟 Objectives
 
