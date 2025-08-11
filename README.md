@@ -47,7 +47,6 @@ MannMitra/
 │   ├── js/
 │   └── audio/
 ├── aasha_chatbot.py     # Emotion + translation logic 
-├── grounding.py          # Grounding Mode component logic
 ├── faq.json              # Predefined FAQs
 ├── requirements.txt      # Python dependencies
 ├── .env                  # API keys (not tracked)
