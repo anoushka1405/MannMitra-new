@@ -15,7 +15,7 @@ https://mannmitra-421674818991.asia-south1.run.app/
 - **Python** & **Flask** Web app and backend logic
 - **Gemeni API** Generative AI for emotionally intelligent responses
 - **Hugging Face Transformers** Emotion detection (GoEmotions model)
-- **Render** Cloud Deployment
+- **Google Cloud** Deployment
 - **HTML/CSS/JS** Frontend
 
 ## 📌 Features
